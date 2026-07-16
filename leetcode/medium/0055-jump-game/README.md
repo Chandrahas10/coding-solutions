@@ -38,16 +38,16 @@ Explanation: You will always arrive at index 3 no matter what. Its maximum jump 
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.6 MB  
-**Submitted:** 2026-07-16T07:20:38.050Z  
+**Runtime:** 3 ms (beats 22.02%)  
+**Memory:** 47.7 MB (beats 81.29%)  
+**Submitted:** 2026-07-16T07:22:15.283Z  
 
 ```java
 class Solution {
     public boolean canJump(int[] nums) {
-        if(nums[0] == 0) return true;
+        if(nums[0] == 0 && nums.length ==1 ) return true;
 
-        if(nums[0]==1 ) return true;
+        if(nums[0]==1 && nums.length == 1) return true;
 
         int far =0;
         int cend =0;
