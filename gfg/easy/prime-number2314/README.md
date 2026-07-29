@@ -36,21 +36,20 @@ Explanation: 1 has only one divisor (1 itself), which is not sufficient for it t
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-21T10:59:38.839Z  
+**Submitted:** 2026-07-29T01:57:07.660Z  
 
 ```java
 class Solution {
     static boolean isPrime(int n) {
         // code here
-        boolean isprime =false;
-        for(int i=2;i<n;i++){
-            if(n%i ==0)
-              return isprime=false;
-            else
-                isprime=true;
+        if(n<=1)return false;
+        
+        for(int i=2;i*i<=n;i++){
+            if(n%i==0)
+                return false;
         }
         
-        return isprime;
+        return true;
     }
 }
 ```
