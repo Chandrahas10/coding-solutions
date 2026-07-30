@@ -28,7 +28,7 @@ Explanation: 1 x 2 x 3 x 4 = 24
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-30T05:36:10.758Z  
+**Submitted:** 2026-07-30T05:37:07.269Z  
 
 ```java
 class Solution {
