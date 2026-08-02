@@ -31,7 +31,7 @@ Explanation: There are 6 nodes in the given binary tree, so its size is 6.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-02T14:45:40.395Z  
+**Submitted:** 2026-08-02T14:50:13.545Z  
 
 ```java
 /*
@@ -52,18 +52,10 @@ class Node
 */
 class Solution {
     public int getSize(Node root) {
-        return inOrder(root,0);
-    }
-    
-    public int inOrder(Node root,int cnt){
-        if(root == null)
-            return cnt;
+        if(root == null) return 0;
         
-       cnt= inOrder(root.left,cnt);
-        cnt++;
-       cnt= inOrder(root.right,cnt);
+        return 1+getSize(root.left)+getSize(root.right);
         
-        return cnt;
     }
 }
 ```
