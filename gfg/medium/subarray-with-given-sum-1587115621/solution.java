@@ -1,28 +1,36 @@
+
 class Solution {
     static ArrayList<Integer> subarraySum(int[] arr, int target) {
-        ArrayList<Integer> ans = new ArrayList<>();
-
-        int left = 0;
-        int sum = 0;
-
-        for (int right = 0; right < arr.length; right++) {
-            sum += arr[right];
-
-            // Shrink the window while sum is greater than target
-            while (sum > target && left <= right) {
-                sum -= arr[left];
-                left++;
+        int start =0;
+        int end =0;
+        int sum=arr[0];
+        while(end<arr.length){
+            if(sum == target){
+                ArrayList<Integer> result = new ArrayList<>();
+                result.add(start + 1);
+                result.add(end + 1);
+                return result;
             }
-
-            // If target sum is found
-            if (sum == target) {
-                ans.add(left + 1);   // 1-based indexing 
-                ans.add(right + 1);
-                return ans;
+            
+            else if(sum < target){
+                end++;
+                
+                if(end<arr.length){
+                    sum+=arr[end];
+                }
+            }
+            
+            else{
+                sum-=arr[start];
+                start++;
+                
+                // if()
+                
             }
         }
-
-        ans.add(-1);
-        return ans;
+        
+        ArrayList<Integer> result = new ArrayList<>();
+        result.add(-1);
+        return result;
     }
 }
