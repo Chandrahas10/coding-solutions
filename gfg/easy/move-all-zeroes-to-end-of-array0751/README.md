@@ -37,28 +37,25 @@ Explanation: No change in array as there are all 0s.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-16T18:05:34.282Z  
+**Submitted:** 2026-08-16T18:07:41.780Z  
 
 ```java
 class Solution {
     void pushZerosToEnd(int[] arr) {
-        ArrayList<Integer> ans = new ArrayList<>();
+        int start = 0;
+        int end = 0;
 
-      
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != 0) {
-                ans.add(arr[i]);
+        while (end < arr.length) {
+
+            if (arr[end] != 0) {
+                int temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+
+                start++;
             }
-        }
 
-   
-        while (ans.size() < arr.length) {
-            ans.add(0);
-        }
-
-      
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = ans.get(i);
+            end++;
         }
     }
 }
